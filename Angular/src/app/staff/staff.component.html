@@ -1,6 +1,6 @@
-<div>
-    <label for="name">Name: </label>
-    <input id="name" [(ngModel)]="staff.name" placeholder="name">
-</div>
-<div><span>id: </span>{{staff.id}}</div>
-<div><span>name: </span>{{staff.name}}</div>
+<h2>My Staff</h2>
+<ul class="staff">
+    <li *ngFor="let staff of InitialStaff">
+    <span class="badge">{{staff.id}}</span> {{staff.name}}
+  </li>
+</ul>

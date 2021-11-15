@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Staff } from "../staff";
+import { InitialStaff } from "../mock-staff";
 
 @Component({
   selector: 'app-staff',
@@ -7,6 +8,8 @@ import { Staff } from "../staff";
   styleUrls: ['./staff.component.sass']
 })
 export class StaffComponent implements OnInit {
+
+  InitialStaff = InitialStaff;
 
   staff: Staff = {
     id: 1,
