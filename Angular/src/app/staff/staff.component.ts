@@ -21,4 +21,9 @@ export class StaffComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectedStaff?: Staff;
+    onSelect(staff: Staff): void {
+  this.selectedStaff = staff;
+}
+
 }
