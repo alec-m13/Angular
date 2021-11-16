@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Staff } from "../staff";
 import { StaffService } from '../staff.service';
-import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-staff',
@@ -14,10 +13,7 @@ export class StaffComponent implements OnInit {
   staff: Staff[] = [];
   zeroString: string = "";
 
-  constructor(
-    private staffService: StaffService,
-    private messageService: MessageService
-  ) {}
+  constructor(private staffService: StaffService) {}
 
   ngOnInit(): void {
     this.getStaff();
@@ -44,12 +40,4 @@ export class StaffComponent implements OnInit {
       member.idString = overPadded.substring(overPadded.length - len);
     }
   }
-
-  selectedStaff?: Staff;
-
-  onSelect(staff: Staff): void {
-    this.selectedStaff = staff;
-    this.messageService.add(`StaffComponent: Selected staff id=${staff.id}`);
-  }
-
 }

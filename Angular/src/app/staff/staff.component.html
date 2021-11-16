@@ -1,18 +1,8 @@
 <h2>My Staff</h2>
 <ul class="staff">
-    <li *ngFor="let staff of this.staff"
-        (click)="onSelect(staff)"
-        [class.selected]="staff === selectedStaff"
-    >
-        <span class="badge">{{staff.idString}}</span> {{staff.name}}
-  </li>
+    <li *ngFor="let member of staff">
+        <a routerLink="/detail/{{member.id}}">
+        <span class="badge">{{member.idString}}</span> {{member.name}}
+        </a>
+    </li>
 </ul>
-
-<div *ngIf="selectedStaff">
-    <h2>{{selectedStaff.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{selectedStaff.id}}</div>
-    <div>
-    <label for="staff-name">Name: </label>
-    <input id="staff-name" [(ngModel)]="selectedStaff.name" placeholder="name">
-    </div>
-</div>
