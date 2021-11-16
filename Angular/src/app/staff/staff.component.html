@@ -1,10 +1,10 @@
 <h2>My Staff</h2>
 <ul class="staff">
-    <li *ngFor="let staff of InitialStaff"
+    <li *ngFor="let staff of this.staff"
         (click)="onSelect(staff)"
         [class.selected]="staff === selectedStaff"
     >
-        <span class="badge">{{staff.id}}</span> {{staff.name}}
+        <span class="badge">{{staff.idString}}</span> {{staff.name}}
   </li>
 </ul>
 
